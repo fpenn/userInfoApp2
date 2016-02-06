@@ -1,0 +1,28 @@
+doctype
+html
+	head
+		title #{title} - Welkom
+		style(type="text/css"): include ../css/structure.css
+		script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+		
+	body
+		header
+			#container
+				h1 Goedemiddag
+				#formElement
+					form(action="http://localhost:8000/searchResults" method="post")
+						input#searchRes(type="text", name="query", autocomplete='off')
+						input#submit(type="submit", value="Search" name="Search")
+				#menu
+					a(href="/") Home
+					a(href="/allUsers") Userlist
+					a(href="/addNewUser") Registration
+				#text
+					p.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis diam sit amet sem laoreet, ut congue diam consectetur. Fusce sapien metus, porta quis enim id, condimentum congue neque. Nulla nec ipsum maximus libero elementum suscipit. Vivamus lobortis nisi vitae tincidunt venenatis. Nunc in accumsan ligula. Nunc pharetra nisi a ligula tristique pharetra. Pellentesque ante mauris, tristique a egestas a, rhoncus vel mi. Vivamus cursus sem sed risus rhoncus rutrum. Donec sit amet ultrices neque. Donec elementum, orci vitae rhoncus porta, erat justo fermentum elit, eu pretium erat lectus quis ex. Vestibulum mattis felis lacus, in commodo metus pharetra eu. Nunc non massa nibh. Nulla mattis iaculis leo, in efficitur magna condimentum vel.
+
+				h4 Search results
+				#searchResult
+					p 
+		script(type='text/javascript'): include ../scripts/structure.js
+

@@ -1,0 +1,26 @@
+doctype
+html
+	head
+		title #{title} - Welkom
+		style(type="text/css"): include ../css/structure.css
+		script(src='../scripts/structure.js')
+	body
+		header
+			#container
+				h1 Goedemiddag
+				
+				#menu
+					a(href="/") Home
+					a(href="/allUsers") Userlist
+					a(href="/addNewUser") Registration
+
+				#addUser
+					form(action="http://localhost:8000/redirect" method="post")
+						p First name
+						input(type="text", name="firstname")
+						p Last name
+						input(type="text", name="lastname")
+						p Email
+						input(type="text", name="email")
+						p
+						input(type="submit", value="Add" name="submit")

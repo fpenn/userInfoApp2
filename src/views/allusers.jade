@@ -1,0 +1,21 @@
+html
+	head
+		title #{title} - Welkom
+		style(type="text/css"): include ../css/structure.css
+		script(src='../scripts/structure.js')
+	body
+		header
+			#container
+				h1 Goedemiddag
+				
+				#menu
+					a(href="/") Home
+					a(href="/allUsers") Userlist
+					a(href="/addNewUser") Registration
+
+				#userList
+					h3 These are all our users: 
+					ul
+					each user in users
+						p= user.firstname + ' ' + user.lastname
+
