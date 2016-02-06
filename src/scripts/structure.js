@@ -2,7 +2,7 @@
 
  var onReceiveServ = function(response) {
 
-  $('#searchResult p').remove();
+   $('#searchResult p').remove();
    for (i = 0; i < response.length; i++) {
 
 
@@ -28,18 +28,36 @@
  $('form').submit(onSubmitFunc);
 
  //Als je een Key indrukt in de zoekbar
+ var isTimerRunning = false;
+
 
  var onKeyPress = function() {
 
    var result = $('#searchRes').val();
 
-   if (result === '') {
+   if (isTimerRunning) {
 
-     $('#searchResult p').remove();
-     return
+     return;
+
    }
 
-   $.post('/searchResults', result, onReceiveServ);
+   isTimerRunning = true;
+
+   setTimeout(function() {
+
+     isTimerRunning = false;
+     if (result === '') {
+
+       $('#searchResult p').remove();
+       return
+     }
+
+     $.post('/searchResults', result, onReceiveServ);
+
+   }, 300);
+
+
+ 
 
  }
 
